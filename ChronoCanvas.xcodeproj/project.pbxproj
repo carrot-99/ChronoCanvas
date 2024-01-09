@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		224E1AAA203A786FB5C6AC8D /* Pods_ChronoCanvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED2023B3703B127F371442 /* Pods_ChronoCanvas.framework */; };
+		CE6944E82B49851200A85C20 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6944E72B49851200A85C20 /* DayData.swift */; };
+		CEA745732B3F033400DFA3CF /* ChronoCanvasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745722B3F033400DFA3CF /* ChronoCanvasApp.swift */; };
+		CEA745752B3F033400DFA3CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745742B3F033400DFA3CF /* ContentView.swift */; };
+		CEA745772B3F033600DFA3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA745762B3F033600DFA3CF /* Assets.xcassets */; };
+		CEA745832B3F048500DFA3CF /* ChronoCanvas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEA745812B3F048500DFA3CF /* ChronoCanvas.xcdatamodeld */; };
+		CEA7458A2B3F09A800DFA3CF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745892B3F09A800DFA3CF /* DataManager.swift */; };
+		CEA7458D2B3F0C8300DFA3CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7458C2B3F0C8300DFA3CF /* MainView.swift */; };
+		CEA7458F2B3F0CAE00DFA3CF /* TimelineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7458E2B3F0CAE00DFA3CF /* TimelineListView.swift */; };
+		CEA745922B3F0CD800DFA3CF /* TimelineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */; };
+		CEA745AD2B43B03100DFA3CF /* TimelineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */; };
+		CEA745AF2B43B05800DFA3CF /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745AE2B43B05800DFA3CF /* AddEventView.swift */; };
+		CEA745B12B43B0FB00DFA3CF /* TimelineEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */; };
+		CEA745B52B44358800DFA3CF /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B42B44358800DFA3CF /* EventListView.swift */; };
+		CEA745B72B4436F800DFA3CF /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */; };
+		CEFD13512B46B155006572C4 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13502B46B155006572C4 /* CalendarViewModel.swift */; };
+		CEFD13542B46B269006572C4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13532B46B269006572C4 /* DayView.swift */; };
+		CEFD13562B46EEBF006572C4 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13552B46EEBF006572C4 /* EventEditView.swift */; };
+		CEFD13582B479207006572C4 /* TimelineEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13572B479207006572C4 /* TimelineEditView.swift */; };
+		CEFD135B2B47ABBD006572C4 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD135A2B47ABBD006572C4 /* AdMobBannerView.swift */; };
+		CEFD135D2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD135C2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift */; };
+		CEFD135F2B47AC0D006572C4 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD135E2B47AC0D006572C4 /* TermsView.swift */; };
+		CEFD13612B47AC22006572C4 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13602B47AC22006572C4 /* PrivacyPolicyView.swift */; };
+		CEFD13632B47AC41006572C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13622B47AC41006572C4 /* SettingsView.swift */; };
+		CEFD136C2B47C35D006572C4 /* AllTimelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD136B2B47C35D006572C4 /* AllTimelinesView.swift */; };
+		CEFD136F2B47DD72006572C4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD136E2B47DD72006572C4 /* Utilities.swift */; };
+		CEFD13732B47E1AC006572C4 /* TimelineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13722B47E1AC006572C4 /* TimelineManager.swift */; };
+		CEFD13752B47E1DE006572C4 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13742B47E1DE006572C4 /* EventManager.swift */; };
+		CEFD13772B47E931006572C4 /* AllEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */; };
+		CEFD13792B47F6B6006572C4 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13782B47F6B6006572C4 /* EventDetailView.swift */; };
+		CEFD137B2B4840CE006572C4 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD137A2B4840CE006572C4 /* ColorPickerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		276D1406F2DA72918C5895BC /* Pods-ChronoCanvas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChronoCanvas.debug.xcconfig"; path = "Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas.debug.xcconfig"; sourceTree = "<group>"; };
+		6888EEA5BA4EDA2AEC9C9A58 /* Pods-ChronoCanvas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChronoCanvas.release.xcconfig"; path = "Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas.release.xcconfig"; sourceTree = "<group>"; };
+		CE6944E72B49851200A85C20 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
+		CEA7456F2B3F033400DFA3CF /* ChronoCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChronoCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA745722B3F033400DFA3CF /* ChronoCanvasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoCanvasApp.swift; sourceTree = "<group>"; };
+		CEA745742B3F033400DFA3CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEA745762B3F033600DFA3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA745822B3F048500DFA3CF /* ChronoCanvas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChronoCanvas.xcdatamodel; sourceTree = "<group>"; };
+		CEA745892B3F09A800DFA3CF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CEA7458C2B3F0C8300DFA3CF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CEA7458E2B3F0CAE00DFA3CF /* TimelineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListView.swift; sourceTree = "<group>"; };
+		CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListViewModel.swift; sourceTree = "<group>"; };
+		CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditorView.swift; sourceTree = "<group>"; };
+		CEA745AE2B43B05800DFA3CF /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditorViewModel.swift; sourceTree = "<group>"; };
+		CEA745B42B44358800DFA3CF /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
+		CEFD13502B46B155006572C4 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		CEFD13532B46B269006572C4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		CEFD13552B46EEBF006572C4 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		CEFD13572B479207006572C4 /* TimelineEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditView.swift; sourceTree = "<group>"; };
+		CEFD13592B47AB2A006572C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CEFD135A2B47ABBD006572C4 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
+		CEFD135C2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyAgreementView.swift; sourceTree = "<group>"; };
+		CEFD135E2B47AC0D006572C4 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		CEFD13602B47AC22006572C4 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		CEFD13622B47AC41006572C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CEFD136B2B47C35D006572C4 /* AllTimelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimelinesView.swift; sourceTree = "<group>"; };
+		CEFD136E2B47DD72006572C4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CEFD13722B47E1AC006572C4 /* TimelineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineManager.swift; sourceTree = "<group>"; };
+		CEFD13742B47E1DE006572C4 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsViewModel.swift; sourceTree = "<group>"; };
+		CEFD13782B47F6B6006572C4 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		CEFD137A2B4840CE006572C4 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		E4ED2023B3703B127F371442 /* Pods_ChronoCanvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChronoCanvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEA7456C2B3F033400DFA3CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224E1AAA203A786FB5C6AC8D /* Pods_ChronoCanvas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FF67A1C5461AB1CA06AFA44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4ED2023B3703B127F371442 /* Pods_ChronoCanvas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F932C90E1E156522F1D1D7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				276D1406F2DA72918C5895BC /* Pods-ChronoCanvas.debug.xcconfig */,
+				6888EEA5BA4EDA2AEC9C9A58 /* Pods-ChronoCanvas.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE6944E62B4984FA00A85C20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE6944E72B49851200A85C20 /* DayData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEA745662B3F033400DFA3CF = {
+			isa = PBXGroup;
+			children = (
+				CEA745712B3F033400DFA3CF /* ChronoCanvas */,
+				CEA745702B3F033400DFA3CF /* Products */,
+				9F932C90E1E156522F1D1D7E /* Pods */,
+				7FF67A1C5461AB1CA06AFA44 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEA745702B3F033400DFA3CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7456F2B3F033400DFA3CF /* ChronoCanvas.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEA745712B3F033400DFA3CF /* ChronoCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD13592B47AB2A006572C4 /* Info.plist */,
+				CEA745812B3F048500DFA3CF /* ChronoCanvas.xcdatamodeld */,
+				CEA745722B3F033400DFA3CF /* ChronoCanvasApp.swift */,
+				CEA745742B3F033400DFA3CF /* ContentView.swift */,
+				CEFD136D2B47DD5B006572C4 /* Utilities */,
+				CEA745882B3F097F00DFA3CF /* Services */,
+				CE6944E62B4984FA00A85C20 /* Models */,
+				CEA745902B3F0CC200DFA3CF /* ViewModels */,
+				CEA7458B2B3F0C7200DFA3CF /* Views */,
+				CEFD13522B46B24C006572C4 /* ViewComponents */,
+				CEA745AA2B4060F000DFA3CF /* Resources */,
+			);
+			path = ChronoCanvas;
+			sourceTree = "<group>";
+		};
+		CEA745882B3F097F00DFA3CF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEA745892B3F09A800DFA3CF /* DataManager.swift */,
+				CEFD13722B47E1AC006572C4 /* TimelineManager.swift */,
+				CEFD13742B47E1DE006572C4 /* EventManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEA7458B2B3F0C7200DFA3CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7458C2B3F0C8300DFA3CF /* MainView.swift */,
+				CEFD13692B47B989006572C4 /* Timelines */,
+				CEFD136A2B47B9A6006572C4 /* Events */,
+				CEFD13682B47B95D006572C4 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEA745902B3F0CC200DFA3CF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */,
+				CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */,
+				CEFD13502B46B155006572C4 /* CalendarViewModel.swift */,
+				CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEA745AA2B4060F000DFA3CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEA745762B3F033600DFA3CF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEFD13522B46B24C006572C4 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD13532B46B269006572C4 /* DayView.swift */,
+				CEFD135A2B47ABBD006572C4 /* AdMobBannerView.swift */,
+				CEFD137A2B4840CE006572C4 /* ColorPickerView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		CEFD13682B47B95D006572C4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD13622B47AC41006572C4 /* SettingsView.swift */,
+				CEFD135C2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift */,
+				CEFD135E2B47AC0D006572C4 /* TermsView.swift */,
+				CEFD13602B47AC22006572C4 /* PrivacyPolicyView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CEFD13692B47B989006572C4 /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7458E2B3F0CAE00DFA3CF /* TimelineListView.swift */,
+				CEFD13572B479207006572C4 /* TimelineEditView.swift */,
+				CEFD136B2B47C35D006572C4 /* AllTimelinesView.swift */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		CEFD136A2B47B9A6006572C4 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */,
+				CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */,
+				CEA745B42B44358800DFA3CF /* EventListView.swift */,
+				CEA745AE2B43B05800DFA3CF /* AddEventView.swift */,
+				CEFD13552B46EEBF006572C4 /* EventEditView.swift */,
+				CEFD13782B47F6B6006572C4 /* EventDetailView.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		CEFD136D2B47DD5B006572C4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD136E2B47DD72006572C4 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEA7456E2B3F033400DFA3CF /* ChronoCanvas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA7457D2B3F033600DFA3CF /* Build configuration list for PBXNativeTarget "ChronoCanvas" */;
+			buildPhases = (
+				8ED41E3D8D39AD22CA53C221 /* [CP] Check Pods Manifest.lock */,
+				CEA7456B2B3F033400DFA3CF /* Sources */,
+				CEA7456C2B3F033400DFA3CF /* Frameworks */,
+				CEA7456D2B3F033400DFA3CF /* Resources */,
+				0C17792C9606BEA553C247C6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChronoCanvas;
+			productName = ChronoCanvas;
+			productReference = CEA7456F2B3F033400DFA3CF /* ChronoCanvas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEA745672B3F033400DFA3CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					CEA7456E2B3F033400DFA3CF = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = CEA7456A2B3F033400DFA3CF /* Build configuration list for PBXProject "ChronoCanvas" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEA745662B3F033400DFA3CF;
+			productRefGroup = CEA745702B3F033400DFA3CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEA7456E2B3F033400DFA3CF /* ChronoCanvas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEA7456D2B3F033400DFA3CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA745772B3F033600DFA3CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C17792C9606BEA553C247C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED41E3D8D39AD22CA53C221 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChronoCanvas-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEA7456B2B3F033400DFA3CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFD13632B47AC41006572C4 /* SettingsView.swift in Sources */,
+				CEA745B12B43B0FB00DFA3CF /* TimelineEditorViewModel.swift in Sources */,
+				CEFD13732B47E1AC006572C4 /* TimelineManager.swift in Sources */,
+				CEA745922B3F0CD800DFA3CF /* TimelineListViewModel.swift in Sources */,
+				CEA7458D2B3F0C8300DFA3CF /* MainView.swift in Sources */,
+				CEFD13752B47E1DE006572C4 /* EventManager.swift in Sources */,
+				CEFD13612B47AC22006572C4 /* PrivacyPolicyView.swift in Sources */,
+				CEFD13562B46EEBF006572C4 /* EventEditView.swift in Sources */,
+				CEFD13512B46B155006572C4 /* CalendarViewModel.swift in Sources */,
+				CEFD136C2B47C35D006572C4 /* AllTimelinesView.swift in Sources */,
+				CEA7458A2B3F09A800DFA3CF /* DataManager.swift in Sources */,
+				CEFD135D2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift in Sources */,
+				CEA745752B3F033400DFA3CF /* ContentView.swift in Sources */,
+				CEFD13772B47E931006572C4 /* AllEventsViewModel.swift in Sources */,
+				CEFD13792B47F6B6006572C4 /* EventDetailView.swift in Sources */,
+				CEA745AF2B43B05800DFA3CF /* AddEventView.swift in Sources */,
+				CEFD136F2B47DD72006572C4 /* Utilities.swift in Sources */,
+				CE6944E82B49851200A85C20 /* DayData.swift in Sources */,
+				CEFD13542B46B269006572C4 /* DayView.swift in Sources */,
+				CEFD13582B479207006572C4 /* TimelineEditView.swift in Sources */,
+				CEA745B72B4436F800DFA3CF /* CustomCalendarView.swift in Sources */,
+				CEA745B52B44358800DFA3CF /* EventListView.swift in Sources */,
+				CEA745AD2B43B03100DFA3CF /* TimelineEditorView.swift in Sources */,
+				CEA745732B3F033400DFA3CF /* ChronoCanvasApp.swift in Sources */,
+				CEFD135B2B47ABBD006572C4 /* AdMobBannerView.swift in Sources */,
+				CEFD137B2B4840CE006572C4 /* ColorPickerView.swift in Sources */,
+				CEA745832B3F048500DFA3CF /* ChronoCanvas.xcdatamodeld in Sources */,
+				CEFD135F2B47AC0D006572C4 /* TermsView.swift in Sources */,
+				CEA7458F2B3F0CAE00DFA3CF /* TimelineListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEA7457B2B3F033600DFA3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEA7457C2B3F033600DFA3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEA7457E2B3F033600DFA3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 276D1406F2DA72918C5895BC /* Pods-ChronoCanvas.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = HXJLYHK5AY;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChronoCanvas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "クロノキャンバス";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "当アプリでは、ユーザーに最適な体験を提供し、サービスを改善するために、一部のデータを収集しています。これには、パーソナライズされた広告の提供、アプリの使用状況の分析、およびサービスの改善が含まれます。あなたのデータは、厳格なプライバシー基準に従って処理され、あなたの同意なしに共有されることはありません。トラッキングの許可をお願いすることで、より個人化された体験を提供し、アプリを継続的に改善することが可能になります。詳細情報やプライバシー設定の管理については、いつでも設定をご確認いただけます。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carrot.ChronoCanvas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEA7457F2B3F033600DFA3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6888EEA5BA4EDA2AEC9C9A58 /* Pods-ChronoCanvas.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = HXJLYHK5AY;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChronoCanvas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "クロノキャンバス";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "当アプリでは、ユーザーに最適な体験を提供し、サービスを改善するために、一部のデータを収集しています。これには、パーソナライズされた広告の提供、アプリの使用状況の分析、およびサービスの改善が含まれます。あなたのデータは、厳格なプライバシー基準に従って処理され、あなたの同意なしに共有されることはありません。トラッキングの許可をお願いすることで、より個人化された体験を提供し、アプリを継続的に改善することが可能になります。詳細情報やプライバシー設定の管理については、いつでも設定をご確認いただけます。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carrot.ChronoCanvas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEA7456A2B3F033400DFA3CF /* Build configuration list for PBXProject "ChronoCanvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA7457B2B3F033600DFA3CF /* Debug */,
+				CEA7457C2B3F033600DFA3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA7457D2B3F033600DFA3CF /* Build configuration list for PBXNativeTarget "ChronoCanvas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA7457E2B3F033600DFA3CF /* Debug */,
+				CEA7457F2B3F033600DFA3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEA745812B3F048500DFA3CF /* ChronoCanvas.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEA745822B3F048500DFA3CF /* ChronoCanvas.xcdatamodel */,
+			);
+			currentVersion = CEA745822B3F048500DFA3CF /* ChronoCanvas.xcdatamodel */;
+			path = ChronoCanvas.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CEA745672B3F033400DFA3CF /* Project object */;
+}
