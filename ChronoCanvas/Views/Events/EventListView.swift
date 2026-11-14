@@ -1,58 +1,83 @@
 //  EventListView.swift
 
-import Foundation
 import SwiftUI
 
+/// 選択日のイベント一覧
 struct EventListView: View {
-    @Environment(\.managedObjectContext) private var context
-    @ObservedObject var viewModel: TimelineEditorViewModel
-    var events: [Event]
-    @State private var editingEvent: Event? = nil
-    @State private var showingEditView = false
-    var selectedDate: Date
-    
+    @ObservedObject var viewModel: CalendarViewModel
+    var onSelect: (Event) -> Void
+    var onAdd: () -> Void
+
+    @State private var eventPendingDeletion: Event?
+
     var body: some View {
-        List {
-            ForEach(viewModel.eventsOnDay(selectedDate), id: \.self) { event in
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(
-                        event.isAllDay ? "\(event.startDate ?? Date(), formatter: Formatter.monthDayFormatter)終日 - \(event.endDate ?? Date(), formatter: Formatter.monthDayFormatter)終日" : "\(event.startDate ?? Date(), formatter: Formatter.itemFormatter) - \(event.endDate ?? Date(), formatter: Formatter.itemFormatter)"
-                    )
-                    .font(.caption)
-                    
-                    Text(event.title ?? "無題のイベント")
-                        .font(.headline)
+        let events = viewModel.eventsForSelectedDate
+
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                Text(DateFormats.dayHeader.string(from: viewModel.selectedDate))
+                    .font(.subheadline.weight(.semibold))
+                if !events.isEmpty {
+                    Text("\(events.count)件")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
-                .padding()
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color(hex: event.colorCode ?? "#3F3FDD")))
-                .shadow(radius: 2)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 5)
-                .onTapGesture {
-                    self.editingEvent = event
-                    self.showingEditView = true
-                }
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
+                Spacer()
             }
-            .onDelete(perform: deleteEvent)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+
+            if events.isEmpty {
+                emptyState
+            } else {
+                List {
+                    ForEach(events, id: \.objectID) { event in
+                        Button {
+                            onSelect(event)
+                        } label: {
+                            EventRowView(event: event, showsTimeline: viewModel.isOverview)
+                        }
+                        .buttonStyle(.plain)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 12, bottom: 4, trailing: 12))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                eventPendingDeletion = event
+                            } label: {
+                                Label("削除", systemImage: "trash")
+                            }
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
         }
-        .listStyle(PlainListStyle())
-        .padding(.horizontal, 5)
-        .sheet(isPresented: $showingEditView) {
-            EventEditView(event: $editingEvent, isPresented: $showingEditView, onSave: { updatedEvent in
-                viewModel.updateEvent(updatedEvent)
-            })
-            .environment(\.managedObjectContext, context)
+        .confirmationDialog(
+            "「\(eventPendingDeletion?.displayTitle ?? "")」を削除しますか？",
+            isPresented: Binding(get: { eventPendingDeletion != nil }, set: { if !$0 { eventPendingDeletion = nil } }),
+            titleVisibility: .visible
+        ) {
+            Button("削除", role: .destructive) {
+                if let event = eventPendingDeletion {
+                    viewModel.delete(event)
+                }
+                eventPendingDeletion = nil
+            }
         }
     }
-    
-    private func deleteEvent(at offsets: IndexSet) {
-        offsets.forEach { index in
-            let event = events.sorted { $0.startDate ?? Date() < $1.startDate ?? Date() }[index]
-            viewModel.deleteEvent(event)
+
+    private var emptyState: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "calendar.badge.plus")
+                .font(.system(size: 28))
+                .foregroundColor(.secondary)
+            Text("この日の予定はありません")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Button("イベントを追加", action: onAdd)
+                .font(.subheadline.weight(.semibold))
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

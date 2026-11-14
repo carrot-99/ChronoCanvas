@@ -1,30 +1,39 @@
 //  TimelineListViewModel.swift
 
+import Combine
+import CoreData
 import Foundation
 
-class TimelineListViewModel: ObservableObject {
-    @Published var timelines: [Timeline] = []
+final class TimelineListViewModel: ObservableObject {
+    @Published private(set) var timelines: [Timeline] = []
     private let timelineManager: TimelineManager
-    
-    init(timelineManager: TimelineManager = TimelineManager()) {
+    private var cancellables = Set<AnyCancellable>()
+
+    init(timelineManager: TimelineManager = TimelineManager(), dataManager: DataManager = .shared) {
         self.timelineManager = timelineManager
         loadTimelines()
+
+        // イベント数の表示を最新に保つため、変更があれば再読み込みする
+        NotificationCenter.default
+            .publisher(for: .NSManagedObjectContextObjectsDidChange, object: dataManager.context)
+            .debounce(for: .milliseconds(50), scheduler: RunLoop.main)
+            .sink { [weak self] _ in self?.loadTimelines() }
+            .store(in: &cancellables)
     }
-    
-    // TimelineManagerを使用してタイムラインをロード
+
     func loadTimelines() {
-        self.timelines = timelineManager.fetchTimelines()
+        timelines = timelineManager.fetchTimelines()
     }
-    
-    // TimelineManagerを使用して新しいタイムラインを追加
-    func addTimeline() {
-        _ = timelineManager.createTimeline(name: "名称未設定（長押しで変更）")
-        loadTimelines()
+
+    func addTimeline(named name: String) {
+        timelineManager.createTimeline(name: name)
     }
-    
-    // TimelineManagerを使用してタイムラインを削除
+
+    func rename(_ timeline: Timeline, to name: String) {
+        timelineManager.renameTimeline(timeline, to: name)
+    }
+
     func deleteTimeline(_ timeline: Timeline) {
         timelineManager.deleteTimeline(timeline)
-        loadTimelines()
     }
 }

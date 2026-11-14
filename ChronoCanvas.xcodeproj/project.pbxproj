@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224E1AAA203A786FB5C6AC8D /* Pods_ChronoCanvas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED2023B3703B127F371442 /* Pods_ChronoCanvas.framework */; };
-		CE6944E82B49851200A85C20 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6944E72B49851200A85C20 /* DayData.swift */; };
+		CE6944E82B49851200A85C20 /* Event+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6944E72B49851200A85C20 /* Event+Extensions.swift */; };
 		CEA745732B3F033400DFA3CF /* ChronoCanvasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745722B3F033400DFA3CF /* ChronoCanvasApp.swift */; };
 		CEA745752B3F033400DFA3CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745742B3F033400DFA3CF /* ContentView.swift */; };
 		CEA745772B3F033600DFA3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA745762B3F033600DFA3CF /* Assets.xcassets */; };
@@ -18,13 +18,12 @@
 		CEA7458F2B3F0CAE00DFA3CF /* TimelineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7458E2B3F0CAE00DFA3CF /* TimelineListView.swift */; };
 		CEA745922B3F0CD800DFA3CF /* TimelineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */; };
 		CEA745AD2B43B03100DFA3CF /* TimelineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */; };
-		CEA745AF2B43B05800DFA3CF /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745AE2B43B05800DFA3CF /* AddEventView.swift */; };
-		CEA745B12B43B0FB00DFA3CF /* TimelineEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */; };
+		CEA745AF2B43B05800DFA3CF /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745AE2B43B05800DFA3CF /* EventFormView.swift */; };
 		CEA745B52B44358800DFA3CF /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B42B44358800DFA3CF /* EventListView.swift */; };
 		CEA745B72B4436F800DFA3CF /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */; };
 		CEFD13512B46B155006572C4 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13502B46B155006572C4 /* CalendarViewModel.swift */; };
 		CEFD13542B46B269006572C4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13532B46B269006572C4 /* DayView.swift */; };
-		CEFD13562B46EEBF006572C4 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13552B46EEBF006572C4 /* EventEditView.swift */; };
+		CEFD13562B46EEBF006572C4 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13552B46EEBF006572C4 /* EventRowView.swift */; };
 		CEFD13582B479207006572C4 /* TimelineEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13572B479207006572C4 /* TimelineEditView.swift */; };
 		CEFD135B2B47ABBD006572C4 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD135A2B47ABBD006572C4 /* AdMobBannerView.swift */; };
 		CEFD135D2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD135C2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift */; };
@@ -35,15 +34,14 @@
 		CEFD136F2B47DD72006572C4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD136E2B47DD72006572C4 /* Utilities.swift */; };
 		CEFD13732B47E1AC006572C4 /* TimelineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13722B47E1AC006572C4 /* TimelineManager.swift */; };
 		CEFD13752B47E1DE006572C4 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13742B47E1DE006572C4 /* EventManager.swift */; };
-		CEFD13772B47E931006572C4 /* AllEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */; };
-		CEFD13792B47F6B6006572C4 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13782B47F6B6006572C4 /* EventDetailView.swift */; };
+		CEFD13792B47F6B6006572C4 /* CalendarEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD13782B47F6B6006572C4 /* CalendarEventsView.swift */; };
 		CEFD137B2B4840CE006572C4 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD137A2B4840CE006572C4 /* ColorPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		276D1406F2DA72918C5895BC /* Pods-ChronoCanvas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChronoCanvas.debug.xcconfig"; path = "Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas.debug.xcconfig"; sourceTree = "<group>"; };
 		6888EEA5BA4EDA2AEC9C9A58 /* Pods-ChronoCanvas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChronoCanvas.release.xcconfig"; path = "Target Support Files/Pods-ChronoCanvas/Pods-ChronoCanvas.release.xcconfig"; sourceTree = "<group>"; };
-		CE6944E72B49851200A85C20 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
+		CE6944E72B49851200A85C20 /* Event+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Extensions.swift"; sourceTree = "<group>"; };
 		CEA7456F2B3F033400DFA3CF /* ChronoCanvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChronoCanvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA745722B3F033400DFA3CF /* ChronoCanvasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoCanvasApp.swift; sourceTree = "<group>"; };
 		CEA745742B3F033400DFA3CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,13 +52,12 @@
 		CEA7458E2B3F0CAE00DFA3CF /* TimelineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListView.swift; sourceTree = "<group>"; };
 		CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListViewModel.swift; sourceTree = "<group>"; };
 		CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditorView.swift; sourceTree = "<group>"; };
-		CEA745AE2B43B05800DFA3CF /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
-		CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditorViewModel.swift; sourceTree = "<group>"; };
+		CEA745AE2B43B05800DFA3CF /* EventFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormView.swift; sourceTree = "<group>"; };
 		CEA745B42B44358800DFA3CF /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		CEFD13502B46B155006572C4 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		CEFD13532B46B269006572C4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-		CEFD13552B46EEBF006572C4 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		CEFD13552B46EEBF006572C4 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		CEFD13572B479207006572C4 /* TimelineEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEditView.swift; sourceTree = "<group>"; };
 		CEFD13592B47AB2A006572C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEFD135A2B47ABBD006572C4 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
@@ -72,8 +69,7 @@
 		CEFD136E2B47DD72006572C4 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CEFD13722B47E1AC006572C4 /* TimelineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineManager.swift; sourceTree = "<group>"; };
 		CEFD13742B47E1DE006572C4 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
-		CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsViewModel.swift; sourceTree = "<group>"; };
-		CEFD13782B47F6B6006572C4 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		CEFD13782B47F6B6006572C4 /* CalendarEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsView.swift; sourceTree = "<group>"; };
 		CEFD137A2B4840CE006572C4 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		E4ED2023B3703B127F371442 /* Pods_ChronoCanvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChronoCanvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,7 +106,7 @@
 		CE6944E62B4984FA00A85C20 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE6944E72B49851200A85C20 /* DayData.swift */,
+				CE6944E72B49851200A85C20 /* Event+Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,9 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA745912B3F0CD800DFA3CF /* TimelineListViewModel.swift */,
-				CEA745B02B43B0FB00DFA3CF /* TimelineEditorViewModel.swift */,
 				CEFD13502B46B155006572C4 /* CalendarViewModel.swift */,
-				CEFD13762B47E931006572C4 /* AllEventsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,9 +222,9 @@
 				CEA745AC2B43B03100DFA3CF /* TimelineEditorView.swift */,
 				CEA745B62B4436F800DFA3CF /* CustomCalendarView.swift */,
 				CEA745B42B44358800DFA3CF /* EventListView.swift */,
-				CEA745AE2B43B05800DFA3CF /* AddEventView.swift */,
-				CEFD13552B46EEBF006572C4 /* EventEditView.swift */,
-				CEFD13782B47F6B6006572C4 /* EventDetailView.swift */,
+				CEA745AE2B43B05800DFA3CF /* EventFormView.swift */,
+				CEFD13552B46EEBF006572C4 /* EventRowView.swift */,
+				CEFD13782B47F6B6006572C4 /* CalendarEventsView.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -357,23 +351,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFD13632B47AC41006572C4 /* SettingsView.swift in Sources */,
-				CEA745B12B43B0FB00DFA3CF /* TimelineEditorViewModel.swift in Sources */,
 				CEFD13732B47E1AC006572C4 /* TimelineManager.swift in Sources */,
 				CEA745922B3F0CD800DFA3CF /* TimelineListViewModel.swift in Sources */,
 				CEA7458D2B3F0C8300DFA3CF /* MainView.swift in Sources */,
 				CEFD13752B47E1DE006572C4 /* EventManager.swift in Sources */,
 				CEFD13612B47AC22006572C4 /* PrivacyPolicyView.swift in Sources */,
-				CEFD13562B46EEBF006572C4 /* EventEditView.swift in Sources */,
+				CEFD13562B46EEBF006572C4 /* EventRowView.swift in Sources */,
 				CEFD13512B46B155006572C4 /* CalendarViewModel.swift in Sources */,
 				CEFD136C2B47C35D006572C4 /* AllTimelinesView.swift in Sources */,
 				CEA7458A2B3F09A800DFA3CF /* DataManager.swift in Sources */,
 				CEFD135D2B47ABF2006572C4 /* TermsAndPrivacyAgreementView.swift in Sources */,
 				CEA745752B3F033400DFA3CF /* ContentView.swift in Sources */,
-				CEFD13772B47E931006572C4 /* AllEventsViewModel.swift in Sources */,
-				CEFD13792B47F6B6006572C4 /* EventDetailView.swift in Sources */,
-				CEA745AF2B43B05800DFA3CF /* AddEventView.swift in Sources */,
+				CEFD13792B47F6B6006572C4 /* CalendarEventsView.swift in Sources */,
+				CEA745AF2B43B05800DFA3CF /* EventFormView.swift in Sources */,
 				CEFD136F2B47DD72006572C4 /* Utilities.swift in Sources */,
-				CE6944E82B49851200A85C20 /* DayData.swift in Sources */,
+				CE6944E82B49851200A85C20 /* Event+Extensions.swift in Sources */,
 				CEFD13542B46B269006572C4 /* DayView.swift in Sources */,
 				CEFD13582B479207006572C4 /* TimelineEditView.swift in Sources */,
 				CEA745B72B4436F800DFA3CF /* CustomCalendarView.swift in Sources */,

@@ -3,29 +3,39 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel = TimelineListViewModel()
-    @StateObject var calendarViewModel = CalendarViewModel(selectedDate: Date(), events: [])
-    @State private var showingSettings = false
+    @StateObject private var viewModel = TimelineListViewModel()
+    @State private var sheet: TimelineSheet?
 
     var body: some View {
-        TimelineListView(viewModel: viewModel, calendarViewModel: calendarViewModel, timelines: viewModel.timelines)
-            .navigationBarItems(
-                leading: Button(action: {
-                    showingSettings = true
-                }) {
-                    Image(systemName: "gear")
-                },
-                trailing: Button(action: {
-                    viewModel.addTimeline()
-                }) {
-                    Image(systemName: "plus")
+        TimelineListView(viewModel: viewModel, sheet: $sheet)
+            .navigationTitle("ChronoCanvas")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        sheet = .settings
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                    .accessibilityLabel("設定")
                 }
-            )
-            .fullScreenCover(isPresented: $showingSettings) {
-                SettingsView()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        sheet = .create
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("年表を追加")
+                }
             }
-            .onAppear {
-                viewModel.loadTimelines()
+            .sheet(item: $sheet) { sheet in
+                switch sheet {
+                case .create:
+                    TimelineEditView(timeline: nil) { viewModel.addTimeline(named: $0) }
+                case .rename(let timeline):
+                    TimelineEditView(timeline: timeline) { viewModel.rename(timeline, to: $0) }
+                case .settings:
+                    SettingsView()
+                }
             }
     }
 }
