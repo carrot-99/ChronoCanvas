@@ -3,44 +3,52 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State private var showingRecord = false
-    @State private var showingTerms = false
-    @State private var showingPrivacyPolicy = false
+    @Environment(\.dismiss) private var dismiss
+
+    static let contactEmail = "carrot99.official@gmail.com"
+
+    private var appVersion: String {
+        let info = Bundle.main.infoDictionary
+        let version = info?["CFBundleShortVersionString"] as? String ?? "-"
+        let build = info?["CFBundleVersion"] as? String ?? "-"
+        return "\(version) (\(build))"
+    }
 
     var body: some View {
         NavigationView {
-            VStack {
-                Form {
-                    Section() {                        
-                        Button("利用規約") {
-                            showingTerms = true
-                        }
-                        .sheet(isPresented: $showingTerms) {
-                            TermsView()
-                        }
-                        
-                        Button("プライバシーポリシー") {
-                            showingPrivacyPolicy = true
-                        }
-                        .sheet(isPresented: $showingPrivacyPolicy) {
-                            PrivacyPolicyView()
+            Form {
+                Section("規約") {
+                    NavigationLink(destination: TermsView()) {
+                        Label("利用規約", systemImage: "doc.text")
+                    }
+                    NavigationLink(destination: PrivacyPolicyView()) {
+                        Label("プライバシーポリシー", systemImage: "hand.raised")
+                    }
+                }
+
+                Section("サポート") {
+                    if let url = URL(string: "mailto:\(Self.contactEmail)") {
+                        Link(destination: url) {
+                            Label("お問い合わせ", systemImage: "envelope")
                         }
                     }
-                    .padding()
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-                    .shadow(radius: 2)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 5)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
                 }
-                .navigationBarTitle("設定", displayMode: .inline)
-                .navigationBarItems(trailing: Button("閉じる") {
-                    presentationMode.wrappedValue.dismiss()
-                })
+
+                Section {
+                    HStack {
+                        Text("バージョン")
+                        Spacer()
+                        Text(appVersion)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            .navigationTitle("設定")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("閉じる") { dismiss() }
+                }
             }
         }
     }

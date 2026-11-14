@@ -1,43 +1,40 @@
 //  AdMobBannerView.swift
 
-import SwiftUI
 import GoogleMobileAds
+import SwiftUI
 
-struct AdMobBannerView: UIViewRepresentable {
-    let adUnitID: String
-    
-    init() {
-        if let adUnitID = Bundle.main.infoDictionary?["AdBannerUnitID"] as? String {
-            self.adUnitID = adUnitID
-        } else {
-            fatalError("AdUnitID not found in Info dictionary")
+/// 画面幅に合わせたアダプティブバナー。広告ユニットIDが未設定の場合は何も表示しない
+struct AdMobBannerView: View {
+    private let adUnitID = Bundle.main.infoDictionary?["AdBannerUnitID"] as? String
+
+    var body: some View {
+        if let adUnitID, !adUnitID.isEmpty {
+            GeometryReader { geometry in
+                BannerRepresentable(adUnitID: adUnitID, width: geometry.size.width)
+            }
+            .frame(height: 50)
         }
     }
-    
+}
+
+private struct BannerRepresentable: UIViewRepresentable {
+    let adUnitID: String
+    let width: CGFloat
+
     func makeUIView(context: Context) -> GADBannerView {
-        let banner = GADBannerView(adSize: getAdSize())
-        banner.adUnitID = self.adUnitID
+        let banner = GADBannerView(adSize: GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(width))
+        banner.adUnitID = adUnitID
+
+        let scene = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first { $0.activationState == .foregroundActive } ?? UIApplication.shared.connectedScenes.first as? UIWindowScene
+        banner.rootViewController = scene?.windows.first { $0.isKeyWindow }?.rootViewController
 
         let request = GADRequest()
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            request.scene = windowScene
-            banner.rootViewController = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController
-        }
-
+        request.scene = scene
         banner.load(request)
         return banner
     }
 
-    func updateUIView(_ uiView: GADBannerView, context: Context) {
-        // バナー広告のビューを更新する必要がある場合に実装
-    }
-    
-    private func getAdSize() -> GADAdSize {
-        // 画面の幅に基づいて適切な広告サイズを取得
-        let frame = UIScreen.main.bounds
-        let viewWidth = frame.size.width
-
-        // 画面の向きに応じた適切な広告サイズを返す
-        return GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
-    }
+    func updateUIView(_ uiView: GADBannerView, context: Context) {}
 }

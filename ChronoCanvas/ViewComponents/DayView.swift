@@ -2,58 +2,60 @@
 
 import SwiftUI
 
+/// カレンダーの1マス
 struct DayView: View {
-    let day: Date
-    var isSelected: Bool
-    var eventsCount: Int
-    var isCurrentMonth: Bool
-    var colorCodes: [Color]
-    
-    private var dayOfWeek: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        return formatter.string(from: day)
-    }
-    
+    let day: CalendarDay
+    let isSelected: Bool
+    let isToday: Bool
+    let weekday: Int
+    let colors: [Color]
+
+    private let maxBars = 3
+
     private var textColor: Color {
-        if !isCurrentMonth {
-            return Color.gray.opacity(0.5)
-        } else if dayOfWeek == "Sat" {
-            return Color.blue
-        } else if dayOfWeek == "Sun" {
-            return Color.red
-        } else {
-            return Color.black
+        if isSelected && isToday { return .white }
+        if !day.isCurrentMonth { return .secondary.opacity(0.5) }
+        switch weekday {
+        case 1: return .red
+        case 7: return .blue
+        default: return .primary
         }
     }
 
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            Text(Formatter.dayFormatter.string(from: day))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding([.top, .leading], 8)
-                .background(isSelected ? Color.blue.opacity(0.3) : Color.clear)
+        VStack(alignment: .leading, spacing: 3) {
+            Text(DateFormats.dayNumber.string(from: day.date))
+                .font(.system(size: 14, weight: isToday ? .bold : .regular))
                 .foregroundColor(textColor)
-            
-            if eventsCount > 0 {
-                Text("\(eventsCount)")
-                    .font(.caption)
-                    .padding(5)
-                    .background(Color.blue)
-                    .clipShape(Circle())
-                    .foregroundColor(.white)
-                    .offset(x: 30, y: 5)
+                .frame(width: 24, height: 24)
+                .background(
+                    Circle().fill(isToday ? (isSelected ? Color.accentColor : Color.accentColor.opacity(0.15)) : .clear)
+                )
+
+            ForEach(Array(colors.prefix(maxBars).enumerated()), id: \.offset) { _, color in
+                Capsule()
+                    .fill(color.opacity(day.isCurrentMonth ? 1 : 0.4))
+                    .frame(height: 5)
             }
-            
-            VStack(alignment: .leading, spacing: 3) {
-                ForEach(colorCodes.indices, id: \.self) { index in
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(colorCodes[index])
-                        .frame(width: 28, height: 6)
-                }
+
+            if colors.count > maxBars {
+                Text("+\(colors.count - maxBars)")
+                    .font(.system(size: 9, weight: .semibold))
+                    .foregroundColor(.secondary)
             }
-            .padding(.top, 30)
-            .padding(.leading, 5)
+            Spacer(minLength: 0)
         }
+        .padding(4)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .background(isSelected ? Color.accentColor.opacity(0.12) : Color.clear)
+        .overlay(
+            RoundedRectangle(cornerRadius: 6)
+                .stroke(isSelected ? Color.accentColor : .clear, lineWidth: 1.5)
+                .padding(1)
+        )
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(DateFormats.dayHeader.string(from: day.date))、イベント\(colors.count)件"))
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 }

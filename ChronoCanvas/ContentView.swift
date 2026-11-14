@@ -3,26 +3,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isShowingTerms = true
-    @State private var hasAgreedToTerms = UserDefaults.standard.bool(forKey: "hasAgreedToTerms")
-    
+    @AppStorage("hasAgreedToTerms") private var hasAgreedToTerms = false
+
     var body: some View {
         if hasAgreedToTerms {
             NavigationView {
                 MainView()
-                    .overlay(
-                        VStack {
-                            Spacer()
-                            AdMobBannerView()
-                                .frame(width: UIScreen.main.bounds.width, height: 50)
-                                .background(Color.gray.opacity(0.1))
-                        },
-                        alignment: .bottom
-                    )
             }
-            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(.stack)
+            // 広告がリストの末尾を隠さないよう、セーフエリアとして確保する
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                AdMobBannerView()
+                    .background(Color(.systemBackground))
+            }
         } else {
-            TermsAndPrivacyAgreementView(isShowingTerms: $isShowingTerms, hasAgreedToTerms: $hasAgreedToTerms)
+            TermsAndPrivacyAgreementView {
+                hasAgreedToTerms = true
+            }
         }
     }
 }
